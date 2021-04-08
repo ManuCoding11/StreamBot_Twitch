@@ -11,9 +11,14 @@
     "url": "git+https://github.com/ManuCoding11/StreamBot_Twitch.git"
   },
   "author": "ManuCoding11",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/ManuCoding11/StreamBot_Twitch/issues"
   },
-  "homepage": "https://github.com/ManuCoding11/StreamBot_Twitch#readme"
+  "homepage": "https://github.com/ManuCoding11/StreamBot_Twitch#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "node-fetch": "^2.6.1",
+    "tmi.js": "^1.7.5"
+  }
 }
