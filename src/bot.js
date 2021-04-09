@@ -1,27 +1,26 @@
-require('dotenv').config({path: 'src/env/.env'})
-const fetch = require('node-fetch')
+require('dotenv').config({ path: 'src/env/.env' })
 const tmi = require('tmi.js')
+const CommandHandler = require("./commandHandler")
+const handler = new CommandHandler()
 
+handler.loadFunctions();
 
 const opts = {
 	identity: {
 		username: process.env.bot_username,
 		password: process.env.bot_password
 	},
-	channels: process.env.channels.split(',')
+	channels: ["spielbaerlp"]//process.env.channels.split(',')
 }
 
-new tmi.client(opts)
+const client = new tmi.client(opts)
 
 	.on('connected', (addr, port) => console.log(`* Connected to ${addr}:${port}, Channels: [${process.env.channels}]`))
 	.on('message', (target, context, msg, self) => {
 
-    	if (self) return;
+		if (self) return;
 
-    	let command = msg.split(" ");
-		command[0] = command[0].toLowerCase();
-
-    	console.log(msg)
+		handler.checkCommand(client, target, context, "!game", self);
 	})
 
 
