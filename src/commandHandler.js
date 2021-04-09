@@ -27,13 +27,13 @@ class CommandHandler {
         }
     }
 
-    checkCommand (client, target, context, msg, self = false) {
+    checkCommand (client, target, context, msg) {
 
         if (this.commandFunctions !== {}) {
 
             if (this.names.includes(msg.split(' ')[0].toLowerCase())) {
 
-                this.commandFunctions[msg.split(' ')[0]](client, target, context, msg, self);
+                this.commandFunctions[msg.split(' ')[0]](client, target, context, msg);
 
                 console.log(`${context['display-name']} issued command ${msg.split(' ')[0].toLowerCase()} with parameters [${msg.split(' ').slice(1)}]`);
             }
