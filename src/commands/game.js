@@ -1,0 +1,21 @@
+const fetch = require('node-fetch');
+
+const obj =
+{
+    names: ["!game", "!spiel", "!category", "!kategorie"],
+    exec: function (client, target, context, msg, self) {
+
+        fetch(`https://decapi.me/twitch/game/${target.slice(1).toLowerCase()}`)
+            .then(res => res.text())
+            .then(body => {
+                let text = (msg.split(' ')[0].toLowerCase() === "!category" || msg.split(' ')[0].toLowerCase() === "!kategorie") ?
+                    `@${context['display-name']} ${target[1].toUpperCase() + target.slice(2)} streamt derzeit in der Kategorie ${body}.` :
+                    `@${context['display-name']} ${target[1].toUpperCase() + target.slice(2)} spielt zurzeit ${body}.`;
+                //client.say(target, text);
+                console.log(text);
+            })
+            .catch(rej => console.error(rej));
+    }
+};
+
+module.exports.obj = obj;
