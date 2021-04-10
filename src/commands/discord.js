@@ -1,7 +1,7 @@
 const obj =
 {
     names: ["!dc", "!discord", "!dcserver"],
-    exec: function (client, target, context, msg, self) {
+    exec: function (client, target, context, msg) {
         if (target === "#tefanoro") {
             client.say(target, `@${context['display-name']} https://discord.gg/GER4CT6HWT`);
         }

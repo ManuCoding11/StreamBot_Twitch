@@ -3,7 +3,7 @@ const fetch = require('node-fetch');
 const obj =
 {
     names: ["!followage", "!follow"],
-    exec: function (client, target, context, msg, self) {
+    exec: function (client, target, context, msg) {
 
         fetch(`https://2g.be/twitch/following.php?user=${context.username}&channel=${target.slice(1)}&format=mwdhms&notext`)
             .then(res => res.text())
