@@ -16,7 +16,7 @@ const opts = {
 const client = new tmi.client(opts);
 
 client
-	.on('connected', (addr, port) => console.log(`* Connected to ${addr}:${port}, Channels: [${process.env.channels}]`))
+	.on('connected', (addr, port) => console.log(`* Connected to ${addr}:${port}, Channels: [${process.env.channels}]\n`))
 	.on('message', (target, context, msg, self) => {
 
 		if (self) return;

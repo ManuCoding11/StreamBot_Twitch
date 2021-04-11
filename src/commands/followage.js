@@ -24,7 +24,7 @@ const obj =
 
                 let text = `@${context['display-name']} folgt diesem Kanal schon seit ${formatted}`;
                 client.say(target, text);
-                console.log(text);
+                console.log(text + "\n");
             })
             .catch(rej => console.error(rej));
     }

@@ -13,7 +13,7 @@ const obj =
                     `@${context['display-name']} ${channel} streamt derzeit in der Kategorie ${body}.` :
                     `@${context['display-name']} ${channel} spielt zurzeit ${body}.`;
                 client.say(target, text);
-                console.log(text);
+                console.log(text + "\n");
             })
             .catch(rej => console.error(rej));
     }
