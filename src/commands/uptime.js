@@ -23,3 +23,5 @@ const obj =
             .catch(rej => console.error(rej));
     }
 }
+
+module.exports.obj = obj;
